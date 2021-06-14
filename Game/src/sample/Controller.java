@@ -128,7 +128,7 @@ rewrite();
         ball.setText(String.valueOf(counter=0));
         final Timer t1=new Timer();
         TimerTask t2=new TimerTask() {
-            int i=3000;
+            int i=6000;
             public void run(){
                 if(i==0){
 
