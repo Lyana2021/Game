@@ -6,12 +6,18 @@ import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.Random;
 import java.util.Timer;
@@ -20,47 +26,49 @@ import java.util.TimerTask;
 import static java.lang.String.valueOf;
 
 public class Controller {
+    public Pane pane;
    public Label op1;
    public Label op2;
    public Label res;
-   public Label schet;
+   public Button b1;
+    public Button b2;
+    public Button b3;
+public Canvas can;
 public Label ball;
+public Circle krug;
 public Label dv;
     public Label vr;
   int counter=0;
-int res1;
-int p1;
-int p2;
-int sum;
-int del;
 
-    int[] rand;
+Model model;
+
+
    public void initialize() {
+       model = new Model();
+       model.iniz();
+       pane.setStyle("-fx-background-color:rgba(112,9,215,0.99);");
+       op1.setTextFill(Color.YELLOW);
+       op2.setTextFill(Color.YELLOW);
+       res.setTextFill(Color.YELLOW);
+       vr.setTextFill(Color.YELLOW);
+       dv.setTextFill(Color.YELLOW);
+       ball.setTextFill(Color.YELLOW);
+       b1.setStyle("-fx-background-color:rgba(250,217,90,0.99);");
+       b2.setStyle("-fx-background-color:rgba(250,217,90,0.99);");
+       b3.setStyle("-fx-background-color:rgba(250,217,90,0.99);");
 
 
 
 
-       Random r = new Random();
-       p1 = r.nextInt(16);
 
-       Random r2 = new Random();
-       p2 = r2.nextInt(16);
-
-       Random r3 = new Random();
-
-       sum = p1 + p2;
-
-       del = p1 - p2;
-
-       rand = new int[]{sum, del};
-       res1 = r3.nextInt(rand.length);
 
 //toHexString-16чные числа
        //toBinaryString-2чные числа
 
-       op1.setText(Integer.toBinaryString(p1));
-       op2.setText(Integer.toBinaryString(p2));
-       res.setText(Integer.toBinaryString(rand[res1]));
+
+       op1.setText(Integer.toBinaryString(model.p1));
+       op2.setText(Integer.toBinaryString(model.p2));
+       res.setText(Integer.toBinaryString(model.rand[model.res1]));
 
 
 
@@ -71,51 +79,42 @@ int del;
        op1.setText(null);
        op2.setText(null);
        res.setText(null);
-
-       Random r4=new Random();
-       p1=r4.nextInt(16);
-       Random r5=new Random();
-       p2=r5.nextInt(16);
-       Random r6=new Random();
-
-       sum=p1+p2;
-
-       del=p1-p2;
-       rand= new int[]{sum, del};
-       res1=r6.nextInt(rand.length);
-
-
-       op1.setText(Integer.toBinaryString(p1));
-       op2.setText(Integer.toBinaryString(p2));
-       res.setText(Integer.toBinaryString(rand[res1]));
+       model.iniz();
+       op1.setText(Integer.toBinaryString(model.p1));
+       op2.setText(Integer.toBinaryString(model.p2));
+       res.setText(Integer.toBinaryString(model.rand[model.res1]));
 
 
 
    }
     public void act1(ActionEvent actionEvent) {
-if (p1 + p2 == rand[res1]){
+if (model.p1 + model.p2 == model.rand[model.res1]){
 
-   // schet.setText("правильно");
 
+    krug.setFill(Color.GREEN);
     counter++;
 
 
    } else {
-   // schet.setText("неправильно");
+
+    krug.setFill(Color.RED);
     counter--;
 
 }
-        ball.setText(valueOf(counter));
+       ball.setText(valueOf(counter));
 rewrite();
 
     }
 
     public void act2(ActionEvent actionEvent) {
-    if (rand[res1] == p1 - p2) {
-           // schet.setText("правильно");
+    if (model.rand[model.res1] == model.p1 - model.p2) {
+
+            krug.setFill(Color.GREEN);
             counter++;
+
         } else {
-           // schet.setText(String.valueOf("неправильно"));
+
+        krug.setFill(Color.RED);
             counter--;
 
 
@@ -125,6 +124,7 @@ rewrite();
     }
 
     public void act3(ActionEvent actionEvent) {
+
         ball.setText(String.valueOf(counter=0));
         final Timer t1=new Timer();
         TimerTask t2=new TimerTask() {

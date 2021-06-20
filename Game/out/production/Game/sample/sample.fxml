@@ -2,9 +2,10 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" prefHeight="253.0" prefWidth="429.0" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -12,22 +13,46 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Pane prefHeight="277.0" prefWidth="401.0">
+      <Pane fx:id="pane" prefHeight="256.0" prefWidth="430.0">
          <children>
-            <Button layoutX="110.0" layoutY="108.0" mnemonicParsing="false" onAction="#act1" prefHeight="25.0" prefWidth="33.0" text="+" />
-            <Button layoutX="110.0" layoutY="139.0" mnemonicParsing="false" onAction="#act2" prefHeight="25.0" prefWidth="33.0" text="-" />
-            <Label fx:id="op1" layoutX="39.0" layoutY="115.0" prefHeight="36.0" prefWidth="52.0" text="Число1" />
-            <Label fx:id="op2" layoutX="164.0" layoutY="121.0" prefHeight="25.0" prefWidth="45.0" text="Число2" />
-            <Label fx:id="res" layoutX="255.0" layoutY="121.0" prefHeight="25.0" prefWidth="73.0" text="Результат" />
-            <Label fx:id="schet" layoutX="39.0" layoutY="75.0" prefHeight="25.0" prefWidth="52.0" text="Счетчик :" />
-            <Label fx:id="ball" layoutX="101.0" layoutY="78.0" prefHeight="17.0" prefWidth="52.0" text="Баллы" />
-            <Label layoutX="217.0" layoutY="116.0" prefHeight="36.0" prefWidth="22.0" text="  =">
+            <Button fx:id="b2" layoutX="110.0" layoutY="86.0" mnemonicParsing="false" onAction="#act1" prefHeight="25.0" prefWidth="33.0" text="+">
                <font>
-                  <Font size="13.0" />
+                  <Font name="Franklin Gothic Demi" size="14.0" />
+               </font></Button>
+            <Button fx:id="b3" layoutX="110.0" layoutY="122.0" mnemonicParsing="false" onAction="#act2" prefHeight="25.0" prefWidth="33.0" text="-">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="14.0" />
+               </font></Button>
+            <Label fx:id="op1" layoutX="41.0" layoutY="98.0" prefHeight="36.0" prefWidth="60.0" text="Число1">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="14.0" />
+               </font></Label>
+            <Label fx:id="op2" layoutX="153.0" layoutY="104.0" prefHeight="25.0" prefWidth="52.0" text="Число2">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="14.0" />
+               </font></Label>
+            <Label fx:id="res" layoutX="237.0" layoutY="105.0" prefHeight="25.0" prefWidth="73.0" text="Результат">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="14.0" />
+               </font></Label>
+            <Label fx:id="ball" layoutX="101.0" layoutY="54.0" prefHeight="17.0" prefWidth="52.0" text="Баллы">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="14.0" />
+               </font></Label>
+            <Label fx:id="dv" layoutX="214.0" layoutY="100.0" prefHeight="36.0" prefWidth="22.0" text="  =">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="vr" layoutX="194.0" layoutY="87.0" prefHeight="17.0" prefWidth="152.0" text="Время" />
-            <Button layoutX="191.0" layoutY="184.0" mnemonicParsing="false" onAction="#act3" text="Старт" />
+            <Label fx:id="vr" layoutX="127.0" layoutY="21.0" prefHeight="17.0" prefWidth="152.0" text="Время">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="14.0" />
+               </font></Label>
+            <Button fx:id="b1" layoutX="202.0" layoutY="147.0" mnemonicParsing="false" onAction="#act3" text="Старт">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="14.0" />
+               </font></Button>
+            <Circle fx:id="krug" fill="DODGERBLUE" layoutX="75.0" layoutY="62.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
          </children>
       </Pane>
    </children>
