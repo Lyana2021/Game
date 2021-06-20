@@ -9,7 +9,7 @@
 ## Статус
 Alpha 1.1
 ## Скриншоты:
-# ![игра.png](https://github.com/Lyana2021/Game/blob/main/%D0%B8%D0%B3%D1%80%D0%B0.png)
+# ![ишра.png](https://github.com/Lyana2021/Game/blob/main/%D0%B8%D1%88%D1%80%D0%B0.png)
 # ![игра2.png](https://github.com/Lyana2021/Game/blob/main/%D0%B8%D0%B3%D1%80%D0%B02.png)
 # ![игра23.png](https://github.com/Lyana2021/Game/blob/main/%D0%B8%D0%B3%D1%80%D0%B023.png)
 
