@@ -7,13 +7,17 @@
 ## Технология
 язык программирования Java.
 ## Статус
-Alpha 1.0
+Alpha 1.1
 ## Скриншоты:
+# ![игра.png](https://github.com/Lyana2021/Game/blob/main/%D0%B8%D0%B3%D1%80%D0%B0.png)
+# ![игра2.png](https://github.com/Lyana2021/Game/blob/main/%D0%B8%D0%B3%D1%80%D0%B02.png)
+# ![игра23.png](https://github.com/Lyana2021/Game/blob/main/%D0%B8%D0%B3%D1%80%D0%B023.png)
 
 ## Зависимости
-1 Java.
-2 IntelliJ IDEA.
-3 Библиотека JavaFX.
+# ![Package sample game.png](https://github.com/Lyana2021/Game/blob/main/Package%20sample%20game.png)
+#### 1 Java.
+#### 2 IntelliJ IDEA.
+#### 3 Библиотека JavaFX.
 ## Установка
 Перетащить файлы в папку с другими проектами программной среды.
 ## Конфигурация
